@@ -1,31 +1,22 @@
-# Parti — Intro page for the Tokyo deliberative technologies workshop (July 2026)
+# Parti — intro page in English
 
-A single-page English introduction to Parti Co-op and twenty years of digital democracy in Korea,
-built as a static site for GitHub Pages.
+A single-page English introduction to Parti Co-op and twenty years of digital democracy in Korea.
+First prepared for the workshop on deliberative technologies in Asia (Tokyo, July 2026).
+
+**Live page: https://parti-coop.github.io/intro-en/**
 
 ## Contents
 
 - `index.html` — the whole page (all CSS inline; only external dependency is Google Fonts)
 - `assets/parti-logo.svg` — Parti wordmark (from the official brand assets)
 
-## Deploy on GitHub Pages
+## Updating
 
-1. Repository: `parti-coop/parti-intro`.
-2. Push these files to the `main` branch:
-   ```bash
-   cd parti-intro
-   git init && git add . && git commit -m "Parti intro page for Tokyo workshop"
-   git branch -M main
-   git remote add origin git@github.com:parti-coop/parti-intro.git
-   git push -u origin main
-   ```
-3. In the repo: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / root**.
-4. The page will be live at `https://parti-coop.github.io/parti-intro/` within a minute or two.
+Edit `index.html` and push to `main` — GitHub Pages redeploys automatically
+(Settings → Pages is set to: Deploy from a branch, `main` / root).
 
-## Before sharing — small edits to consider
+## Notes
 
-- **Contact**: the page currently links peacecode.net and parti.coop. If you want a direct
-  email or LinkedIn on the "Who's here in Tokyo" card, add it in the `#ohyeon` section.
-- **Workshop name**: the footer says "workshop on deliberative technologies in Asia · Tokyo,
-  July 2026" — adjust if you prefer the official event title.
 - All statistics follow the Parti common-numbers canon (10th-anniversary page basis, 2026).
+- The footer mentions the Tokyo workshop; adjust or remove it when reusing this page
+  as a general English introduction.
