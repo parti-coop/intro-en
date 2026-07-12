@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parti — A digital square where citizens dialogue and take action</title>
+<meta name="description" content="Parti is a social platform cooperative from Seoul, South Korea — a digital square where citizens dialogue and take action. Two decades of digital democracy practice in Korea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #8B64D0;
+    --purple-dark: #6B44B0;
+    --purple-pale: #F3EEFB;
+    --teal: #30AD9F;
+    --ink: #1a1a1f;
+    --ink-soft: #4a4a55;
+    --line: #e8e6ef;
+    --bg: #ffffff;
+    --bg-soft: #faf9fc;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.65;
+    font-size: 16.5px;
+  }
+  a { color: var(--purple-dark); text-decoration: none; border-bottom: 1px solid rgba(139,100,208,.35); transition: border-color .15s, color .15s; }
+  a:hover { color: var(--purple); border-bottom-color: var(--purple); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+  nav .brand img { height: 20px; display: block; }
+  nav .brand { border: none; }
+  nav .links { display: flex; gap: 22px; font-size: 13.5px; font-weight: 500; }
+  nav .links a { border: none; color: var(--ink-soft); }
+  nav .links a:hover { color: var(--purple-dark); }
+  @media (max-width: 640px) { nav .links { display: none; } }
+
+  /* Hero */
+  header.hero { padding: 84px 0 60px; background: linear-gradient(180deg, var(--bg) 0%, var(--purple-pale) 140%); }
+  .hero .kicker { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--purple); margin-bottom: 18px; }
+  .hero h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; max-width: 760px; }
+  .hero h1 .accent { color: var(--purple); }
+  .hero p.lede { margin-top: 22px; font-size: 19px; color: var(--ink-soft); max-width: 700px; }
+  .hero .cta { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero .cta a { border: none; font-weight: 600; font-size: 14.5px; padding: 11px 20px; border-radius: 999px; }
+  .hero .cta a.primary { background: var(--purple); color: #fff; }
+  .hero .cta a.primary:hover { background: var(--purple-dark); }
+  .hero .cta a.ghost { border: 1.5px solid var(--purple); color: var(--purple-dark); }
+
+  /* Stats */
+  .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-soft); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 30px 24px; }
+  @media (max-width: 720px) { .stats .wrap { grid-template-columns: repeat(2, 1fr); gap: 20px 8px; } }
+  .stat b { display: block; font-size: 24px; font-weight: 800; color: var(--purple-dark); letter-spacing: -0.02em; }
+  .stat span { font-size: 12.5px; color: var(--ink-soft); line-height: 1.4; display: block; margin-top: 2px; }
+
+  /* Sections */
+  section { padding: 68px 0 12px; }
+  section h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.015em; margin-bottom: 8px; }
+  section .sub { color: var(--ink-soft); max-width: 720px; margin-bottom: 34px; font-size: 16.5px; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--purple); margin-bottom: 10px; }
+
+  /* Cards */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+  .card { border: 1px solid var(--line); border-radius: 14px; padding: 24px 22px; background: #fff; }
+  .card .tag { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+  .card.purple .tag { color: var(--purple); }
+  .card h3 { font-size: 18px; font-weight: 700; margin: 6px 0 8px; }
+  .card p { font-size: 14.5px; color: var(--ink-soft); }
+  .card .links { margin-top: 14px; font-size: 13.5px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+
+  /* Principles */
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px; }
+  @media (max-width: 720px) { .principles { grid-template-columns: 1fr; } }
+  .principle { background: var(--purple-pale); border-radius: 14px; padding: 22px; }
+  .principle h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 6px; color: var(--purple-dark); }
+  .principle p { font-size: 14px; color: var(--ink-soft); }
+
+  /* Timeline */
+  #history { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-bottom: 60px; }
+  .timeline { position: relative; margin-top: 10px; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(180deg, var(--purple), var(--teal)); border-radius: 2px; }
+  .t-item { position: relative; padding: 0 0 34px 38px; }
+  .t-item::before { content: ""; position: absolute; left: 0; top: 7px; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 3px solid var(--purple); }
+  .t-item.teal::before { border-color: var(--teal); }
+  .t-item .year { font-size: 13px; font-weight: 800; letter-spacing: .06em; color: var(--purple-dark); text-transform: uppercase; }
+  .t-item h3 { font-size: 17.5px; font-weight: 700; margin: 3px 0 6px; }
+  .t-item p { font-size: 15px; color: var(--ink-soft); max-width: 700px; }
+  .t-item .refs { margin-top: 6px; font-size: 13px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+
+  /* Network list */
+  .netgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 720px) { .netgrid { grid-template-columns: 1fr; } }
+
+  /* Profile */
+  .profile { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; border: 1px solid var(--line); border-radius: 16px; padding: 30px; background: #fff; }
+  @media (max-width: 640px) { .profile { grid-template-columns: 1fr; } }
+  .profile .who b { display: block; font-size: 19px; font-weight: 800; }
+  .profile .who span { font-size: 13.5px; color: var(--ink-soft); }
+  .profile p { font-size: 15px; color: var(--ink-soft); margin-bottom: 10px; }
+
+  /* Closing */
+  .closing { background: linear-gradient(135deg, var(--purple) 0%, var(--teal) 130%); color: #fff; border-radius: 20px; padding: 46px 40px; margin: 30px 0 20px; }
+  .closing h2 { color: #fff; font-size: 24px; margin-bottom: 12px; }
+  .closing p { max-width: 640px; opacity: .95; }
+  .closing a { color: #fff; border-bottom-color: rgba(255,255,255,.5); font-weight: 600; }
+  .closing .row { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 14.5px; }
+
+  footer { padding: 34px 0 50px; font-size: 13px; color: var(--ink-soft); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  footer img { height: 16px; opacity: .8; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/parti-logo.svg" alt="Parti"></a>
+    <div class="links">
+      <a href="#work">What we do</a>
+      <a href="#how">How we work</a>
+      <a href="#history">20 years in Korea</a>
+      <a href="#network">Network</a>
+      <a href="#ohyeon">Who's here</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="kicker">Parti Co-op · Seoul, South Korea</div>
+    <h1>A digital square where citizens <span class="accent">dialogue</span> and take <span class="accent">action</span>.</h1>
+    <p class="lede">Parti is a social platform cooperative — led by its crew members, sustained by citizen supporters. For over a decade we have built and run Korea's civic squares, deliberation platforms, and the tools that carry citizens' voices into real decisions.</p>
+    <div class="cta">
+      <a class="primary" href="#work">Explore our work</a>
+      <a class="ghost" href="#history">Korea's digital democracy, 2004–2026</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>10+ yrs</b><span>of sustained practice, founded 2015</span></div>
+    <div class="stat"><b>215+</b><span>documented deliberative forums</span></div>
+    <div class="stat"><b>56,620</b><span>direct forum participants</span></div>
+    <div class="stat"><b>5.4M</b><span>citizens reached through our platforms</span></div>
+    <div class="stat"><b>1,500+</b><span>civic &amp; public-interest partner organizations</span></div>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="eyebrow">What we do</div>
+    <h2>Square · Bridge · Solution — for democracy</h2>
+    <p class="sub">Our work falls into three parts: a living square where citizens act every day, a bridge that carries their proposals into institutions, and solutions any group can run for themselves.</p>
+    <div class="cards">
+      <div class="card purple">
+        <div class="tag">The Square</div>
+        <h3>Parti — the digital civic square</h3>
+        <p>A living public space with 100,000+ monthly visitors, where citizens ask questions, run campaigns, deliberate, fact-check, and build public-interest data — 1,200+ citizen campaigns to date.</p>
+        <div class="links">
+          <a href="https://campaigns.do" target="_blank">campaigns.do</a>
+          <a href="https://parti.coop" target="_blank">parti.coop</a>
+          <a href="https://talks.campaigns.do/goals/parti-10th-anniversary" target="_blank">10-year record</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tag">The Bridge</div>
+        <h3>Parti DemosX — civic collaboration platform</h3>
+        <p>A "proposal → deliberation → policy" platform adopted by Korean ministries, the Seoul Metropolitan Government, regional education offices, and the presidential National Unity Commission.</p>
+        <div class="links">
+          <a href="https://demosx.org" target="_blank">demosx.org</a>
+          <a href="https://toolkit.parti.coop/demosx/" target="_blank">DemosX toolkit</a>
+        </div>
+      </div>
+      <div class="card purple">
+        <div class="tag">The Solutions</div>
+        <h3>Parti Townhall &amp; Mixon</h3>
+        <p>Decision and digital tools any group can run for themselves — 1,000+ Townhall sessions a year for real-time deliberative voting, and 500+ community spaces on Mixon, our digital-transformation platform for nonprofits and co-ops.</p>
+        <div class="links">
+          <a href="https://townhall.kr" target="_blank">townhall.kr</a>
+          <a href="https://mixon.io" target="_blank">mixon.io</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">How we work</div>
+    <h2>The practice came first, not the tools</h2>
+    <p class="sub">For over a decade Parti has convened up to twenty offline deliberations, living labs, and civic workshops every month — conservatively, 1,000+ field events. Every platform we built grew out of what we first learned in real rooms with real citizens.</p>
+    <div class="principles">
+      <div class="principle">
+        <h3>Trust · rules · stewardship</h3>
+        <p>A civic platform is not just code. It works when trust, procedural rules, and a responsible operating body are built together — that combination, refined over ten years, is what made DemosX a shared model across Korean institutions.</p>
+      </div>
+      <div class="principle">
+        <h3>Citizen ownership, by structure</h3>
+        <p>Parti is a cooperative: the square is owned by the people who use and run it. Governments adopt our platforms, but the ownership stays with citizens — that independence has held across changes of administration.</p>
+      </div>
+      <div class="principle">
+        <h3>Knowledge as a public good</h3>
+        <p>We publish our deliberation playbooks, formats, and operating guides — including deliberative programs such as Galaxy Voting, Star-to-Star Dialogue, and Policy Battles — so others can adapt them. <a href="https://toolkit.parti.coop" target="_blank">toolkit.parti.coop</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="history">
+  <div class="wrap">
+    <div class="eyebrow">Context</div>
+    <h2>Twenty years of digital democracy in Korea</h2>
+    <p class="sub">How does a society carry the energy of its plazas into everyday institutions? Korea has lived that question in a compressed form — repeated crises, massive candlelight plazas, and each time, an attempt to turn that energy into durable civic infrastructure. Parti's story runs through this timeline. For the full story, read our CEO's essay: <a href="https://medium.com/@rest515/a-genealogy-of-korean-digital-democracy-from-the-efficacy-of-the-square-to-everyday-democracy-a8ccec94abb5" target="_blank">A Genealogy of Korean Digital Democracy</a>.</p>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="year">2004 – 2008</div>
+        <h3>Agora — the first mass online public square</h3>
+        <p>Daum's "Agora" forum became the largest online public square of 2000s Korea, where millions debated national issues daily. It proved that ordinary citizens would deliberate at scale — and it is where Parti's founding story begins: our CEO worked on Agora before leaving to build squares that citizens themselves could own.</p>
+      </div>
+      <div class="t-item">
+        <div class="year">2008</div>
+        <h3>Candlelight protests — the online square moves to the street</h3>
+        <p>The protests against US beef imports were organized substantially through online forums, an early landmark of internet-mediated civic action.</p>
+        <div class="refs">
+          <a href="https://en.wikipedia.org/wiki/2008_US_beef_protest_in_South_Korea" target="_blank">2008 protests</a>
+          <a href="https://en.wikipedia.org/wiki/History_of_candlelight_rallies_in_South_Korea" target="_blank">Candlelight rallies in Korea</a>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="year">2015</div>
+        <h3>Parti is founded</h3>
+        <p>Developers and activists from the portal-era squares founded Parti Demos, on a conviction the portals could not deliver: the digital civic square should belong to citizens. In 2018 it was incorporated as a social cooperative.</p>
+        <div class="refs"><a href="https://parti.coop" target="_blank">parti.coop</a></div>
+      </div>
+      <div class="t-item">
+        <div class="year">2016 – 2017</div>
+        <h3>The candlelight plazas and a peaceful transfer of power</h3>
+        <p>Millions gathered weekly through a winter of candlelight demonstrations, leading to a presidential impeachment entirely within constitutional process. The question the plazas left behind — how to make participation everyday rather than exceptional — has shaped Korean civic tech since.</p>
+        <div class="refs"><a href="https://en.wikipedia.org/wiki/2016%E2%80%932017_South_Korean_protests" target="_blank">2016–2017 protests</a></div>
+      </div>
+      <div class="t-item">
+        <div class="year">2017 –</div>
+        <h3>Participation platforms enter government</h3>
+        <p>The post-impeachment government opened "Gwanghwamun 1st Avenue" for citizen proposals, and Seoul launched "Democracy Seoul." Parti built and operated these civic-participation platforms — the beginning of the multi-layered civic collaboration model that became DemosX.</p>
+        <div class="refs"><a href="https://demosx.org" target="_blank">demosx.org</a></div>
+      </div>
+      <div class="t-item teal">
+        <div class="year">2019</div>
+        <h3>Facing the Ocean — East Asian civic tech joins hands</h3>
+        <p>Parti proposed and co-organized Facing the Ocean, a Korea–Japan–Taiwan civic hacking alliance with g0v and Code for Japan, meeting and hacking across the region since Okinawa 2019.</p>
+        <div class="refs">
+          <a href="https://www.code4japan.org/news/facingtheocean" target="_blank">Code for Japan</a>
+          <a href="https://taiwaninsight.org/2021/10/01/hackers-facing-the-ocean-g0v-and-east-asian-civic-tech-community/" target="_blank">Taiwan Insight essay</a>
+          <a href="https://summit.g0v.tw/2020/en/agenda/2020-12-05/5f0f209d0bde6f3bbab73f7a/" target="_blank">g0v Summit review</a>
+        </div>
+      </div>
+      <div class="t-item teal">
+        <div class="year">2020</div>
+        <h3>COVID-19 — civic hackers and open data in 3 days</h3>
+        <p>When mask shortages hit, Parti proposed a joint civic-tech response for public data. The government opened pharmacy inventory data; within 3 days citizen developers shipped the first apps — 200+ volunteers, 50+ free apps. The collaboration led to the founding of Code for Korea and a Presidential Citation.</p>
+        <div class="refs"><a href="https://codefor.kr" target="_blank">codefor.kr</a></div>
+      </div>
+      <div class="t-item">
+        <div class="year">2022 – 2024</div>
+        <h3>Deliberation becomes infrastructure</h3>
+        <p>DemosX spread across central ministries, metropolitan government, education offices, and the presidential National Unity Commission — the same civic collaboration model, adopted as continuing infrastructure rather than one-off projects.</p>
+      </div>
+      <div class="t-item">
+        <div class="year">Dec 2024</div>
+        <h3>The martial law crisis — and citizens, again</h3>
+        <p>A sudden martial law declaration was overturned within hours by the National Assembly, surrounded and protected by citizens; impeachment and a peaceful election followed. Korea's democracy held — and the crisis renewed the case that democratic capacity must live in everyday infrastructure, not only in emergencies.</p>
+        <div class="refs"><a href="https://en.wikipedia.org/wiki/2024_South_Korean_martial_law_crisis" target="_blank">2024 martial law crisis</a></div>
+      </div>
+      <div class="t-item teal">
+        <div class="year">2025 – 2026</div>
+        <h3>AI meets deliberation</h3>
+        <p>DemosX now uses AI to analyze tens of thousands of citizen opinions so that citizens themselves surface the agenda (National Unity Commission). Parti designs AI-supported one-on-one deep dialogue and public forums with the Ministry of Unification, and our CEO serves on the AI Democracy Division of the presidential National AI Strategy Council.</p>
+        <div class="refs">
+          <a href="https://medium.com/@rest515/the-next-chapter-of-the-square-the-democracy-korea-is-building-in-the-age-of-ai-7a4dbaaf06b0" target="_blank">Essay: The Next Chapter of the Square</a>
+          <a href="https://talks.campaigns.do/goals/parti-10th-anniversary" target="_blank">Parti's 10-year record</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="network">
+  <div class="wrap">
+    <div class="eyebrow">Democracy Network</div>
+    <h2>Building with peers across East Asia</h2>
+    <p class="sub">Parti is among the founders of the East Asian civic-tech network, and we think of this work as a relay — each community carrying what the others have learned.</p>
+    <div class="netgrid">
+      <div class="card">
+        <div class="tag">Alliance</div>
+        <h3>Facing the Ocean</h3>
+        <p>The Korea–Japan–Taiwan civic hacking network Parti proposed and co-organizes, with nearly a decade of collaboration with Code for Japan and g0v.</p>
+        <div class="links"><a href="https://www.code4japan.org/activity/global" target="_blank">Code for Japan · Global</a></div>
+      </div>
+      <div class="card">
+        <div class="tag">Spin-off</div>
+        <h3>Code for Korea</h3>
+        <p>Founded out of the 2020 mask-app collaboration and spun off by Parti into an independent civic hacking community, where citizens solve public problems with their own expertise.</p>
+        <div class="links"><a href="https://codefor.kr" target="_blank">codefor.kr</a></div>
+      </div>
+      <div class="card">
+        <div class="tag">Recognition</div>
+        <h3>Across sectors</h3>
+        <p>Two Presidential Citations (COVID-19 response; ICT public service), the Korea Democracy Award, the Roh Hoe-chan Award, and the iF Design Award — recognition spanning government, civil society, labor, and design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ohyeon">
+  <div class="wrap">
+    <div class="eyebrow">Who's here in Tokyo</div>
+    <h2>Ohyeon Kweon</h2>
+    <p class="sub" style="margin-bottom:24px">CEO of Parti Co-op, attending the workshop.</p>
+    <div class="profile">
+      <div class="who">
+        <b>KWEON, Ohyeon</b>
+        <span>CEO, Parti Co-op<br>Member, AI Democracy Division,<br>National AI Strategy Council (presidential)</span>
+      </div>
+      <div>
+        <p>Ohyeon has worked on digital democracy for over twenty years — from Daum's Agora, the mass online square of 2000s Korea, to founding Parti in 2015. Parti's tools grew out of more than a thousand citizen forums and workshops he and the Parti crew have run in the field.</p>
+        <p>He writes on democratic technology — technology of, by, and for citizens — and on how AI can strengthen rather than erode democratic life. He is glad to compare notes on deliberation formats, civic platform governance, institutional adoption pathways, and cooperative ownership models.</p>
+        <p>Recent essays in English: <a href="https://medium.com/@rest515/a-genealogy-of-korean-digital-democracy-from-the-efficacy-of-the-square-to-everyday-democracy-a8ccec94abb5" target="_blank">A Genealogy of Korean Digital Democracy</a> · <a href="https://medium.com/@rest515/the-next-chapter-of-the-square-the-democracy-korea-is-building-in-the-age-of-ai-7a4dbaaf06b0" target="_blank">The Next Chapter of the Square</a> · <a href="https://medium.com/@rest515/who-owns-ai-47935b6a2929" target="_blank">Who Owns AI?</a></p>
+        <p style="margin-bottom:0"><a href="mailto:rest515@parti.coop">rest515@parti.coop</a> · <a href="https://medium.com/@rest515" target="_blank">medium.com/@rest515</a> · <a href="https://peacecode.net" target="_blank">peacecode.net</a> (Korean) · <a href="https://parti.coop" target="_blank">parti.coop</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="closing">
+      <h2>The digital civic square can belong to citizens.</h2>
+      <p>That is the working model we bring to Tokyo — shaped by twenty years of Korean plazas and a decade of cooperative practice. We don't assume it is the answer for every society; we came to share what we have tested, learn how others are answering the same question, and build the connective tissue — identity, interoperability, data sovereignty — together.</p>
+      <div class="row">
+        <a href="https://parti.coop" target="_blank">parti.coop</a>
+        <a href="https://campaigns.do" target="_blank">campaigns.do</a>
+        <a href="https://demosx.org" target="_blank">demosx.org</a>
+        <a href="https://toolkit.parti.coop" target="_blank">toolkit.parti.coop</a>
+        <a href="https://medium.com/@rest515" target="_blank">Essays in English</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><img src="assets/parti-logo.svg" alt="Parti"><br>Parti Co-op — a social platform cooperative, Seoul.</div>
+    <div>Prepared for the workshop on deliberative technologies in Asia · Tokyo, July 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
