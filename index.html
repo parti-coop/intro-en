@@ -74,7 +74,8 @@
 
   /* Cards */
   .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+  .cards.four { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } .cards.four { grid-template-columns: 1fr; } }
   .card { border: 1px solid var(--line); border-radius: 14px; padding: 24px 22px; background: #fff; }
   .card .tag { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
   .card.purple .tag { color: var(--purple); }
@@ -143,9 +144,9 @@
       <a href="#work">What we do</a>
       <a href="#how">How we work</a>
       <a href="#now">Now</a>
-      <a href="#history">30 years in Korea</a>
       <a href="#network">Network</a>
-      <a href="#ohyeon">Who's here</a>
+      <a href="#history">30 years in Korea</a>
+      <a href="#ohyeon">Who we are</a>
     </div>
   </div>
 </nav>
@@ -177,32 +178,39 @@
 <section id="work">
   <div class="wrap">
     <div class="eyebrow">What we do</div>
-    <h2>Square · Bridge · Solution — for democracy</h2>
-    <p class="sub">Our work falls into three parts: a living square where citizens act every day, a bridge that carries their proposals into institutions, and solutions any group can run for themselves.</p>
-    <div class="cards">
+    <h2>Two spaces, and what holds them up.</h2>
+    <p class="sub">On top, two kinds of public space: one the citizens own, one the institutions run. Underneath, the two things that keep them standing — how we are owned, and what we have learned to run.</p>
+    <div class="cards four">
       <div class="card purple">
-        <div class="tag">The Square</div>
-        <h3>Parti — the digital civic square</h3>
-        <p>A living public space with 100,000+ monthly visitors, where citizens ask questions, run campaigns, deliberate, fact-check, and build public-interest data — 1,200+ citizen campaigns to date.</p>
+        <div class="tag">Space · owned by citizens</div>
+        <h3>Digital Civic Square</h3>
+        <p>A living public space where citizens set the agenda themselves — asking, campaigning, deliberating, fact-checking, building public-interest data. At a local election, citizens ran their own campaign to watch how regional newsrooms were covering the race.</p>
         <div class="links">
           <a href="https://campaigns.do" target="_blank">campaigns.do</a>
           <a href="https://parti.coop" target="_blank">parti.coop</a>
-          <a href="https://talks.campaigns.do/goals/parti-10th-anniversary" target="_blank">10-year record</a>
         </div>
       </div>
-      <div class="card">
-        <div class="tag">The Bridge</div>
-        <h3>Parti DemosX — civic collaboration platform</h3>
-        <p>A "proposal → deliberation → policy" platform adopted by Korean ministries, the Seoul Metropolitan Government, regional education offices, and the presidential National Unity Commission.</p>
+      <div class="card purple">
+        <div class="tag">Space · run by institutions</div>
+        <h3>Civic Collaboration Platform</h3>
+        <p>Proposal → deliberation → policy, operated by the institution and open to its citizens. DemosX is our open guide to building such a platform in layers; Mixon is the solution we build it with. Citizen proposals have become policy in central ministries, local governments, and education offices.</p>
         <div class="links">
           <a href="https://demosx.org" target="_blank">demosx.org</a>
           <a href="https://toolkit.parti.coop/demosx/" target="_blank">DemosX toolkit</a>
         </div>
       </div>
-      <div class="card purple">
-        <div class="tag">The Solutions</div>
-        <h3>Parti Townhall &amp; Mixon</h3>
-        <p>Decision and digital tools any group can run for themselves — 1,000+ Townhall sessions a year for real-time deliberative voting, and 500+ community spaces on Mixon, our digital-transformation platform for nonprofits and co-ops.</p>
+      <div class="card">
+        <div class="tag">Foundation · ownership &amp; relationships</div>
+        <h3>Cooperative and network</h3>
+        <p>A form of ownership and a form of relationship. Parti is a cooperative, so the square stays with citizens across changes of administration; and we build alongside peers — we proposed and led Facing the Ocean, and we created Code for Korea and let it stand on its own.</p>
+        <div class="links">
+          <a href="https://codefor.kr" target="_blank">codefor.kr</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tag">Foundation · practice &amp; tools</div>
+        <h3>Programs and solutions</h3>
+        <p>Galaxy Voting, Star-to-Star Dialogue, Policy Battles, Idea Markets — deliberative formats we first ran in rooms, and then built tools for: Townhall and Mixon. At the Busan International Film Festival, a Townhall ran live with the audience in the hall. The programs came first; the tools followed.</p>
         <div class="links">
           <a href="https://townhall.kr" target="_blank">townhall.kr</a>
           <a href="https://mixon.io" target="_blank">mixon.io</a>
@@ -259,6 +267,34 @@
   </div>
 </section>
 
+<section id="network">
+  <div class="wrap">
+    <div class="eyebrow">Democracy Network</div>
+    <h2>Building with peers across East Asia</h2>
+    <p class="sub">Parti has been part of weaving the East Asian civic-tech network since its early days, and we think of this work as a relay — each community carrying what the others have learned.</p>
+    <div class="netgrid">
+      <div class="card">
+        <div class="tag">Alliance</div>
+        <h3>Facing the Ocean</h3>
+        <p>A Korea–Japan–Taiwan civic hacking network we helped start and co-organize, built on years of friendship with Code for Japan and g0v.</p>
+        <div class="links"><a href="https://www.code4japan.org/activity/global" target="_blank">Code for Japan · Global</a></div>
+      </div>
+      <div class="card">
+        <div class="tag">Spin-off</div>
+        <h3>Code for Korea</h3>
+        <p>Born out of the 2020 mask-app collaboration and now an independent civic hacking community, where citizens solve public problems with their own expertise.</p>
+        <div class="links"><a href="https://codefor.kr" target="_blank">codefor.kr</a></div>
+      </div>
+      <div class="card">
+        <div class="tag">Recognition</div>
+        <h3>Across sectors</h3>
+        <p>Recognition has come from several directions — government, civil society, labor, and design. We value the breadth more than any single award: it suggests the square serves many kinds of citizens.</p>
+        <div class="links"><a href="https://www.instagram.com/reel/DY2CV9mu6LN/" target="_blank">No Youth No Japan × Parti — Instagram series (JP)</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="history">
   <div class="wrap">
     <div class="eyebrow">Context</div>
@@ -283,7 +319,7 @@
       <div class="t-item">
         <div class="year">2004 – 2008</div>
         <h3>Agora — the first mass online public square</h3>
-        <p>Daum's "Agora" forum became the largest online public square of 2000s Korea, where millions debated national issues daily. It showed that ordinary citizens would deliberate at scale — and it is where Parti's story begins: our chair worked on Agora before leaving to build squares that citizens themselves could own.</p>
+        <p>Daum's "Agora" forum became the largest online public square of 2000s Korea, drawing more than a million people a day at its peak. It showed that ordinary citizens would deliberate at scale — and it is where Parti's story begins: our chair worked on Agora before leaving to build squares that citizens themselves could own.</p>
       </div>
       <div class="t-item">
         <div class="year">2008</div>
@@ -342,8 +378,9 @@
       <div class="t-item teal">
         <div class="year">2025 – 2026</div>
         <h3>AI meets deliberation</h3>
-        <p>DemosX now uses AI to analyze tens of thousands of citizen opinions so that citizens themselves surface the agenda (National Unity Commission). Parti designs AI-supported one-on-one deep dialogue and public forums with the Ministry of Unification, and our chair serves on the AI Democracy Division of the presidential National AI Strategy Council.</p>
+        <p>Chorus, our agenda-discovery module, uses AI to sort tens of thousands of citizen opinions while human moderators keep judgment in the loop, so that citizens themselves surface the agenda — first deployed with the presidential National Unity Commission. Parti designs AI-supported one-on-one deep dialogue and public forums with the Ministry of Unification, and our chair serves on the AI Democracy Division of the presidential National AI Strategy Council.</p>
         <div class="refs">
+          <a href="https://cohesion.or.kr" target="_blank">cohesion.or.kr (Korean)</a>
           <a href="https://medium.com/@rest515/the-next-chapter-of-the-square-the-democracy-korea-is-building-in-the-age-of-ai-7a4dbaaf06b0" target="_blank">Essay: The Next Chapter of the Square</a>
           <a href="https://talks.campaigns.do/goals/parti-10th-anniversary" target="_blank">Parti's 10-year record</a>
         </div>
@@ -352,39 +389,11 @@
   </div>
 </section>
 
-<section id="network">
-  <div class="wrap">
-    <div class="eyebrow">Democracy Network</div>
-    <h2>Building with peers across East Asia</h2>
-    <p class="sub">Parti has been part of weaving the East Asian civic-tech network since its early days, and we think of this work as a relay — each community carrying what the others have learned.</p>
-    <div class="netgrid">
-      <div class="card">
-        <div class="tag">Alliance</div>
-        <h3>Facing the Ocean</h3>
-        <p>A Korea–Japan–Taiwan civic hacking network we helped start and co-organize, built on years of friendship with Code for Japan and g0v.</p>
-        <div class="links"><a href="https://www.code4japan.org/activity/global" target="_blank">Code for Japan · Global</a></div>
-      </div>
-      <div class="card">
-        <div class="tag">Spin-off</div>
-        <h3>Code for Korea</h3>
-        <p>Born out of the 2020 mask-app collaboration and now an independent civic hacking community, where citizens solve public problems with their own expertise.</p>
-        <div class="links"><a href="https://codefor.kr" target="_blank">codefor.kr</a></div>
-      </div>
-      <div class="card">
-        <div class="tag">Recognition</div>
-        <h3>Across sectors</h3>
-        <p>Recognition has come from several directions — government, civil society, labor, and design. We value the breadth more than any single award: it suggests the square serves many kinds of citizens.</p>
-        <div class="links"><a href="https://www.instagram.com/reel/DY2CV9mu6LN/" target="_blank">No Youth No Japan × Parti — Instagram series (JP)</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="ohyeon">
   <div class="wrap">
-    <div class="eyebrow">Who's here in Tokyo</div>
+    <div class="eyebrow">Who we are</div>
     <h2>KWEON, Ohyeon</h2>
-    <p class="sub" style="margin-bottom:24px">Chair of Parti Co-op — presenting in "Deliberative Process Design Around Asia," Day 2.</p>
+    <p class="sub" style="margin-bottom:24px">Chair of Parti Co-op — the person to talk to about anything on this page.</p>
     <div class="profile">
       <div class="who">
         <b>KWEON, Ohyeon</b>
@@ -392,9 +401,9 @@
       </div>
       <div>
         <p>Ohyeon has worked on digital democracy since the early 2000s — from Daum's Agora, the mass online square of 2000s Korea, to founding Parti in 2015. Parti's tools grew out of more than a thousand citizen forums and workshops he and the Parti crew have run in the field.</p>
-        <p>He writes on democratic technology — technology of, by, and for citizens — and on how AI can strengthen rather than erode democratic life. He is glad to compare notes on deliberation formats, civic platform governance, institutional adoption pathways, and cooperative ownership models.</p>
+        <p>He writes on democratic technology — technology of, by, and for citizens — and on how AI can strengthen democratic life. He is glad to compare notes on deliberation formats, civic platform governance, institutional adoption pathways, and cooperative ownership models.</p>
         <p>Recent essays in English: <a href="https://medium.com/@rest515/a-genealogy-of-korean-digital-democracy-from-the-efficacy-of-the-square-to-everyday-democracy-a8ccec94abb5" target="_blank">A Genealogy of Korean Digital Democracy</a> · <a href="https://medium.com/@rest515/the-next-chapter-of-the-square-the-democracy-korea-is-building-in-the-age-of-ai-7a4dbaaf06b0" target="_blank">The Next Chapter of the Square</a> · <a href="https://medium.com/@rest515/who-owns-ai-47935b6a2929" target="_blank">Who Owns AI?</a></p>
-        <p style="margin-bottom:0"><a href="mailto:rest515@parti.coop">rest515@parti.coop</a> · <a href="https://medium.com/@rest515" target="_blank">medium.com/@rest515</a> · <a href="https://peacecode.net" target="_blank">peacecode.net</a> (Korean) · <a href="https://parti.coop" target="_blank">parti.coop</a></p>
+        <p style="margin-bottom:0"><a href="mailto:ohyeon@parti.coop">ohyeon@parti.coop</a> · <a href="https://medium.com/@rest515" target="_blank">medium.com/@rest515</a> · <a href="https://peacecode.net" target="_blank">peacecode.net</a> (Korean) · <a href="https://parti.coop" target="_blank">parti.coop</a></p>
       </div>
     </div>
   </div>
@@ -452,7 +461,7 @@
 <footer>
   <div class="wrap">
     <div><img src="assets/parti-logo.svg" alt="Parti"><br>Parti Co-op — a social platform cooperative, Seoul.</div>
-    <div>Prepared for the workshop on deliberative technologies in Asia · Tokyo, July 2026</div>
+    <div>Contact: <a href="mailto:ohyeon@parti.coop">ohyeon@parti.coop</a> · First prepared for the workshop on deliberative technologies in Asia, Tokyo, July 2026</div>
   </div>
 </footer>
 
